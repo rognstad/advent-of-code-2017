@@ -1,3 +1,5 @@
+'use strict';
+
 // make sure to pass input as a string because the real puzzle input is a large enough number that JS treats it as Infinity
 
 function aoc2017d1p1(input) {
