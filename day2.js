@@ -1,3 +1,5 @@
+'use strict';
+
 function getRows(str) {
     return str.split(/\n/);
 }
