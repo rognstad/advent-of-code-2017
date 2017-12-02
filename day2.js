@@ -11,7 +11,7 @@ function aoc2017d2p1(input) {
 
     function getRowChecksum(row) {
         var max, min;
-        row.forEach(function (value) {
+        row.forEach(function updateMaxMin(value) {
             if (!max || value > max) {
                 max = value;
             }
@@ -24,7 +24,7 @@ function aoc2017d2p1(input) {
 
     return getRows(input)
         .map(cleanRow)
-        .reduce(function (sum, row) {
+        .reduce(function reducer(sum, row) {
             return sum + getRowChecksum(row);
         }, 0);
 }
@@ -33,7 +33,7 @@ function aoc2017d2p1(input) {
 function aoc2017d2p2(input) {
 
     function sortHighestToLowest(row) {
-        return row.sort(function (a, b) {
+        return row.sort(function sorter(a, b) {
             return b - a;
         });
     }
@@ -53,7 +53,7 @@ function aoc2017d2p2(input) {
 
     return getRows(input)
         .map(cleanRow)
-        .reduce(function (sum, row) {
+        .reduce(function reducer(sum, row) {
             return sum + getRowChecksum(sortHighestToLowest(row));
         }, 0);
 }
